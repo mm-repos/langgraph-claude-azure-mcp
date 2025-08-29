@@ -16,7 +16,7 @@ If you discover a security vulnerability in this project, please report it priva
 
 Instead, please report security vulnerabilities by:
 
-1. **Email**: Send an email to [security@codewith-mm.dev] with:
+1. **Email**: Send an email to [manasam@lensfashion.com] with:
    - A clear description of the vulnerability
    - Steps to reproduce the issue
    - Potential impact assessment
