@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "azure-search-mcp": {
+      "command": "python",
+      "args": [
+        "-m",
+        "azure_search_mcp"
+      ],
+      "cwd": "../langgraph-claude-azure-mcp",
+      "env": {
+        "PYTHONPATH": "../langgraph-claude-azure-mcp/src"
+      }
+    }
+  }
+}

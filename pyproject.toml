@@ -1,0 +1,158 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "azure-ai-search-mcp-server"
+version = "0.1.0"
+description = "MCP Server for Azure AI Search integration using LangGraph and Claude Desktop"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = [
+    "mcp", "azure", "search", "ai", "claude", "langgraph", "rag",
+    "azure-ai-search", "claude-desktop", "model-context-protocol",
+    "retrieval-augmented-generation", "document-search", "conversational-ai",
+    "enterprise-search", "semantic-search", "knowledge-management",
+    "ai-search", "nlp", "machine-learning", "chatbots", "information-retrieval",
+    "azure-cognitive-search", "python-ai", "search-engine", "ai-integration"
+]
+
+[project.urls]
+Homepage = "https://github.com/codewith-mm/langgraph-claude-azure-mcp"
+Repository = "https://github.com/codewith-mm/langgraph-claude-azure-mcp"
+Issues = "https://github.com/codewith-mm/langgraph-claude-azure-mcp/issues"
+Documentation = "https://github.com/codewith-mm/langgraph-claude-azure-mcp#readme"
+
+dependencies = [
+    "mcp>=1.0.0",
+    "langgraph>=0.2.0",
+    "langchain>=0.2.0",
+    "langchain-community>=0.2.0",
+    "langchain-google-genai>=1.0.0",
+    "azure-search-documents>=11.4.0",
+    "azure-core>=1.28.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "grandalf>=0.8"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0"
+]
+
+[project.scripts]
+azure-search-mcp = "azure_search_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+src = ["src"]
+respect-gitignore = true
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "__pycache__",
+]
+
+[tool.ruff.lint]
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+# Also enable:
+# - isort (I) for import sorting
+# - pep8-naming (N) for naming conventions  
+# - pyupgrade (UP) for modern Python syntax
+# - flake8-bugbear (B) for likely bugs
+# - flake8-simplify (SIM) for code simplification
+# - flake8-comprehensions (C4) for comprehension improvements
+select = ["E", "F", "I", "N", "UP", "B", "SIM", "C4"]
+
+# Allow these specific rule violations that might be common in your project
+ignore = [
+    "E501",  # Line too long (handled by formatter)
+    "B008",  # Do not perform function calls in argument defaults
+    "C901",  # Too complex (let developers decide)
+    "N806",  # Variable should be lowercase (for compatibility with external APIs)
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.per-file-ignores]
+# Tests can use magic values, assertions, and fixtures
+"tests/**/*.py" = [
+    "S101",    # asserts allowed in tests
+    "ARG",     # Unused function args -> fixtures nevertheless are functionally relevant
+    "FBT",     # Don't care about booleans as positional arguments in tests
+    "PLR2004", # Magic value used in comparison, ...
+    "S311",    # Standard pseudo-random generators are not suitable for security/cryptographic purposes
+]
+
+[tool.ruff.lint.isort]
+# Align with your project structure
+known-first-party = ["azure_search_mcp"]
+force-single-line = false
+lines-after-imports = 2
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
