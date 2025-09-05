@@ -3,12 +3,9 @@
 <!-- SEO Keywords: Azure AI Search, MCP Server, Claude Desktop, LangGraph, RAG, Retrieval Augmented Generation, Document Search, AI Search Integration, Model Context Protocol, Enterprise Search -->
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Azure AI Search](https://img.shields.io/badge/Azure-AI%20Search-0078d4.svg)](https://azure.microsoft.com/en-us/services/search/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-Workflows-green.svg)](https://langchain-ai.github.io/langgraph/)
 [![Model Context Protocol](https://img.shields.io/badge/MCP-Compatible-orange.svg)](https://modelcontextprotocol.io/)
-[![GitHub stars](https://img.shields.io/github/stars/codewith-mm/langgraph-claude-azure-mcp?style=social)](https://github.com/codewith-mm/langgraph-claude-azure-mcp/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/codewith-mm/langgraph-claude-azure-mcp?style=social)](https://github.com/codewith-mm/langgraph-claude-azure-mcp/network/members)
 
 **An intelligent Model Context Protocol (MCP) server for Azure AI Search integration with Claude Desktop** - Transform enterprise document search into natural AI conversations using LangGraph workflows, Google Gemini, and advanced retrieval-augmented generation (RAG).
 
@@ -509,22 +506,6 @@ LangSmith provides excellent tracing and monitoring for your MCP server:
 - 📊 Monitors all search operations  
 - 🔗 Dashboard: https://smith.langchain.com
 - 🧪 Test by using the MCP server with Claude
-
-## 🔄 Alternatives & Comparisons
-
-### **Why Choose Azure AI Search MCP Server?**
-
-| Feature | This Project | Elasticsearch + Custom API | OpenAI Assistants API | Basic RAG Solutions |
-|---------|-------------|---------------------------|---------------------|-------------------|
-| **Claude Desktop Integration** | ✅ Native MCP support | ❌ Requires custom integration | ❌ No direct Claude support | ❌ Manual implementation |
-| **Azure AI Search** | ✅ Full Azure integration | ⚠️ Requires separate setup | ❌ Limited search capabilities | ⚠️ Depends on implementation |
-| **LangGraph Workflows** | ✅ Visual workflow design | ❌ Custom logic required | ❌ Linear processing only | ❌ No workflow management |
-| **Enterprise Security** | ✅ Azure security + MCP | ✅ Self-managed | ⚠️ OpenAI data policies | ⚠️ Implementation dependent |
-| **Cost** | 💰 Azure usage + free tool | 💰💰 Infrastructure + development | 💰💰💰 Per-token pricing | 💰 Variable |
-| **Observability** | ✅ LangSmith tracing | ⚠️ Custom monitoring | ⚠️ Basic logging | ❌ Minimal tracking |
-| **Customization** | ✅ Full control | ✅ Full control | ❌ Limited customization | ✅ Full control |
-
----
 
 �🎉 **You're all set!** Your Azure AI Search MCP server is ready to provide intelligent document retrieval and analysis to Claude Desktop, with comprehensive visualization tools and optional LangSmith monitoring for performance insights.
 
